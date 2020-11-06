@@ -1,23 +1,74 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { useState } from 'react';
+import  './callNumber.js';
+import { CallNum,  } from './callNumber.js';
+
+
+
 
 function App() {
+
+let [ Number, setNumber]=useState(0)
+let [isMorning, SetTheme ] = useState(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div align='center' className= {isMorning ? 'Light' : 'Dark'}>
+ 
+      <h1>
+        Simple Counter App
+      </h1>
+
+<br />
+       
+      
+      <h2 >
+      
+        Good
+        { isMorning ? ' Morning' : ' Evening' } </h2>
+        
+        
+         <h3>
+       <CallNum counter={Number} />
+         </h3>
+
+      
+
+     
+     
+     
+       <button onClick= {
+         ()=>SetTheme(!isMorning)}>
+
+           Change Theme {isMorning ? 'To Dark' : 'To Light'}
+
+
+       </button>
+
+      
+
+     <br />
+
+
+      
+
+     <button onClick={
+       ()=>setNumber(Number - 1)
+     }>
+       Decrease
+     </button>
+
+
+     <button onClick={
+        ()=>setNumber(Number + 1)
+      }>
+        Increase
+      </button>
+
+
+
+
+
     </div>
   );
 }
