@@ -1,8 +1,11 @@
 .Light{
-  background-color: aliceblue;
+  width: fit-content;
+  background-color: rgb(255, 205, 205);
   
 }
 .Dark{
-  background-color:gray;
+  
+  width: fit-content  ;
+  background-color:rgb(128, 31, 31);
 }
 
